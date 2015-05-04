@@ -1,0 +1,194 @@
+
+#kwHeader {
+	
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 99999;
+
+	height: 0;
+
+	background-color: $color0;
+	color: $color2;
+	
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	box-shadow: $box-shadow-z-2;
+
+	font-size: 1.2rem;
+
+	* {
+		flex-grow: 0;
+		flex-shrink: 0;
+		-webkit-user-select: none;
+	}
+
+	#kwTitle {
+		color: $color2;
+		font-size: 2rem;
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
+		pointer-events: none;
+	}
+
+	a, label {
+
+		overflow: hidden;
+
+		background-color: inherit;
+		color: $color2;
+
+		&:hover {
+			background-color: inherit;
+			& * {
+				color: $color2-v2;
+			}
+		}
+
+		cursor: pointer;
+
+	}
+
+	#kwNav {
+
+		width: 6rem;
+
+		margin-left: 1rem;
+		margin-right: 1rem;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+
+		a {
+			width: 1.2rem;
+		}
+
+	}
+
+	#kwActionButtons {
+		
+		height: 2rem;
+		margin-right: 0.5rem;
+		margin-left: 1rem;
+
+		#kwSelectBook {
+
+			width: 8rem;
+			height: 100%;
+
+			background-color: $yes-green;
+			color: white;
+			font-weight: bold;
+
+			box-sizing: border-box;
+			border: 1px solid $color0;
+			box-shadow: $box-shadow-z-2;
+
+			vertical-align: middle;
+
+			&:hover {
+				border: 1px solid transparent;
+			}
+
+		}
+
+		#kwFinderMenuButton {
+			display: inline-block;
+			line-height: 2rem;
+			margin-left: 0.5rem;
+			margin-right: 0.5rem;
+
+			vertical-align: middle;
+
+			opacity: 0;
+			pointer-events: none;
+		}
+
+	}
+
+	#kwChapters {
+		flex-grow: 1;
+		padding: 1rem;
+		margin-left: 1rem;
+		margin-right: 1rem;
+		cursor: pointer;
+	}
+
+	#kwChapters,
+	#kwResults {
+		opacity: 0;		
+		pointer-events: none;
+		flex-shrink: 1;
+	}
+
+}
+
+#kwMinPage,
+#kwMaxPage {
+	display: block;
+	
+	width: 3rem;
+	height: 3rem;
+
+	position: fixed;
+	top: 0;
+	left: 0.75rem;
+	z-index: 50000;
+
+	background-color: $color2;
+	color: $color0;
+
+	font-size: 1.2rem;
+	font-weight: bold;
+	text-align: center;
+	line-height: 3rem;
+
+	box-shadow: $box-shadow-z-2;
+
+	opacity: 0;
+	pointer-events: none;
+}
+
+#kwFinderOn:checked {
+
+	& ~ #kwHeader {
+
+		#kwNav {
+			width: 1.2rem;
+			#kwRefresh, #kwNextPage {
+				width: 0;
+				pointer-events: none;
+			}
+		}
+		#kwActionButtons {
+
+			#kwSelectBook {
+				width: 0;
+				padding-left: 0;
+				padding-right: 0;
+				pointer-events: none;
+			}
+
+			#kwFinderMenuButton {
+				opacity: 1;
+				pointer-events: auto;
+			}
+
+		}
+
+		#kwChapters, #kwResults {
+			opacity: 1;
+			pointer-events: auto;
+		}
+
+		#kwResults {
+			flex-shrink: 0;
+		}
+
+	}
+
+}

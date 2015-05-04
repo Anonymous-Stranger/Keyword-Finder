@@ -1,0 +1,180 @@
+* {
+  transition: all 800ms;
+  font-family: "Times New Roman", serif; }
+
+.invisible {
+  display: none; }
+
+#showIntro:checked ~ #introduction {
+  top: 0;
+  bottom: 0; }
+
+#introduction {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  z-index: 10000;
+  transition: all 1s;
+  background-color: #222222;
+  color: #eeee77;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem; }
+  #introduction #mainHeader {
+    display: block;
+    z-index: 12000;
+    flex-shrink: 0;
+    background-color: #222222;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem; }
+    #introduction #mainHeader *:not(#progName) {
+      margin: 0.5rem;
+      color: white; }
+    #introduction #mainHeader #progName {
+      margin: 1rem;
+      color: #eeee77; }
+  #introduction #introButtons {
+    overflow: hidden; }
+    #introduction #introButtons #yesTutorial,
+    #introduction #introButtons #noTutorial {
+      display: block;
+      margin: 1rem;
+      padding: 1rem;
+      transition: all 400ms;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      border: 1px solid #222222;
+      box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+      #introduction #introButtons #yesTutorial:hover,
+      #introduction #introButtons #noTutorial:hover {
+        border: 1px solid transparent;
+        cursor: pointer; }
+    #introduction #introButtons #yesTutorial {
+      background-color: #009933; }
+    #introduction #introButtons #noTutorial {
+      background-color: #3366ff; }
+  #introduction #tutorial {
+    width: 652px;
+    height: 0;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    margin: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center; }
+    #introduction #tutorial > * {
+      opacity: 1; }
+    #introduction #tutorial #tutorialHeader {
+      width: 100%;
+      height: 3.5rem;
+      flex-shrink: 0;
+      flex-grow: 0;
+      margin: 0;
+      line-height: 3.5rem;
+      background-color: #151515;
+      z-index: 30000;
+      box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+      #introduction #tutorial #tutorialHeader * {
+        color: #eeee77;
+        vertical-align: middle;
+        line-decoration: none;
+        margin-left: 0.3rem;
+        margin-right: 0.3rem; }
+      #introduction #tutorial #tutorialHeader #slideTitle {
+        margin: 0; }
+      #introduction #tutorial #tutorialHeader #prevSlide:hover,
+      #introduction #tutorial #tutorialHeader #nextSlide:hover {
+        cursor: pointer; }
+        #introduction #tutorial #tutorialHeader #prevSlide:hover *,
+        #introduction #tutorial #tutorialHeader #nextSlide:hover * {
+          color: #eec522; }
+      #introduction #tutorial #tutorialHeader #nextSlide {
+        float: right; }
+    #introduction #tutorial #tutorialSlide {
+      width: 100%;
+      flex-grow: 1;
+      flex-shrink: 1;
+      overflow: auto;
+      padding: 0.2rem;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      #introduction #tutorial #tutorialSlide img, #introduction #tutorial #tutorialSlide object {
+        max-height: 100%;
+        max-width: 100%;
+        margin: auto; }
+      #introduction #tutorial #tutorialSlide object {
+        width: 100%; }
+      #introduction #tutorial #tutorialSlide #tutorialFinished {
+        display: block;
+        width: 10rem;
+        height: 1.5rem;
+        padding: 1rem;
+        transition: all 400ms;
+        background-color: #009933;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1.5rem;
+        border: 1px solid #222222;
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+        #introduction #tutorial #tutorialSlide #tutorialFinished:hover {
+          border: 1px solid transparent;
+          cursor: pointer; }
+  #introduction #signature {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem; }
+
+#showTutorial:checked ~ #introduction #mainHeader {
+  margin-bottom: 0; }
+  #showTutorial:checked ~ #introduction #mainHeader *:not(#progName) {
+    height: 0;
+    overflow: hidden; }
+#showTutorial:checked ~ #introduction #tutorial {
+  height: calc(492px + 3.5rem);
+  border: 1px solid white;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+#showTutorial:checked ~ #introduction #introButtons {
+  height: 0; }
+
+#loadingContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9000;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; }
+  #loadingContainer #loading {
+    padding: 0rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    color: #eeee77;
+    background-color: #222222;
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    #loadingContainer #loading #loadingIcon {
+      font-size: 0.4rem; }
+    #loadingContainer #loading #loadingText {
+      font-size: 2rem;
+      margin-left: 2rem;
+      margin-right: 1rem; }

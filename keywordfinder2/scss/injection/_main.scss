@@ -1,0 +1,27 @@
+
+* {
+	transition: all 400ms;
+}
+
+.kwInvisible {
+	display: none;
+}
+
+.kwHighlight {
+	display: inline-block;
+	
+	background-color: $color2;
+	color: $color0;
+
+	text-indent: 0;
+
+	&[selected] {
+		background-color: $color2-v2;
+	}
+
+	&:hover {
+		background-color: $color2-v2;
+		cursor: pointer;
+	}
+
+}

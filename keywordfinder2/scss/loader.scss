@@ -1,0 +1,77 @@
+
+@import 'theme';
+
+$loader-diameter: 6em;
+
+$loader-radius: $loader-diameter / 2;
+
+$loader-padding1: 0.2em;
+$loader-padding2: 0.1em;
+
+$loader-padded-diameter: $loader-diameter + $loader-padding1;
+$loader-padded1-radius: $loader-radius + $loader-padding1;
+$loader-padded2-radius: $loader-radius + $loader-padding2;
+
+.loader,
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+}
+.loader:before,
+.loader:after {
+  position: absolute;
+  content: '';
+}
+.loader:before {
+  width: $loader-padded1-radius;
+  height: $loader-padded-diameter;
+  background: $color0;
+  border-radius: $loader-padded-diameter 0 0 $loader-padded-diameter;
+  top: -$loader-padding2;
+  left: -$loader-padding2;
+  -webkit-transform-origin: $loader-padded1-radius $loader-padded2-radius;
+  transform-origin: $loader-padded1-radius $loader-padded2-radius;
+  -webkit-animation: load2 2s infinite ease 1.5s;
+  animation: load2 2s infinite ease 1.5s;
+}
+.loader {
+  font-size: 11px;
+  text-indent: -99999em;
+  margin: $loader-radius auto;
+  position: relative;
+  width: $loader-diameter;
+  height: $loader-diameter;
+  box-shadow: inset 0 0 0 1em $color2;
+}
+.loader:after {
+  width: $loader-padded1-radius;
+  height: $loader-padded-diameter;
+  background: $color0;
+  border-radius: 0 $loader-padded-diameter $loader-padded-diameter 0;
+  top: -$loader-padding2;
+  left: $loader-padded2-radius;
+  -webkit-transform-origin: 0px $loader-padded2-radius;
+  transform-origin: 0px $loader-padded2-radius;
+  -webkit-animation: load2 2s infinite ease;
+  animation: load2 2s infinite ease;
+}
+@-webkit-keyframes load2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

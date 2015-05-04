@@ -1,0 +1,258 @@
+* {
+  transition: all 400ms; }
+
+.kwInvisible {
+  display: none; }
+
+.kwHighlight {
+  display: inline-block;
+  background-color: #eeee77;
+  color: #222222;
+  text-indent: 0; }
+  .kwHighlight[selected] {
+    background-color: #eec522; }
+  .kwHighlight:hover {
+    background-color: #eec522;
+    cursor: pointer; }
+
+#kwHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  height: 0;
+  background-color: #222222;
+  color: #eeee77;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 1.2rem; }
+  #kwHeader * {
+    flex-grow: 0;
+    flex-shrink: 0;
+    -webkit-user-select: none; }
+  #kwHeader #kwTitle {
+    color: #eeee77;
+    font-size: 2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    pointer-events: none; }
+  #kwHeader a, #kwHeader label {
+    overflow: hidden;
+    background-color: inherit;
+    color: #eeee77;
+    cursor: pointer; }
+    #kwHeader a:hover, #kwHeader label:hover {
+      background-color: inherit; }
+      #kwHeader a:hover *, #kwHeader label:hover * {
+        color: #eec522; }
+  #kwHeader #kwNav {
+    width: 6rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; }
+    #kwHeader #kwNav a {
+      width: 1.2rem; }
+  #kwHeader #kwActionButtons {
+    height: 2rem;
+    margin-right: 0.5rem;
+    margin-left: 1rem; }
+    #kwHeader #kwActionButtons #kwSelectBook {
+      width: 8rem;
+      height: 100%;
+      background-color: #009933;
+      color: white;
+      font-weight: bold;
+      box-sizing: border-box;
+      border: 1px solid #222222;
+      box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      vertical-align: middle; }
+      #kwHeader #kwActionButtons #kwSelectBook:hover {
+        border: 1px solid transparent; }
+    #kwHeader #kwActionButtons #kwFinderMenuButton {
+      display: inline-block;
+      line-height: 2rem;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+      opacity: 0;
+      pointer-events: none; }
+  #kwHeader #kwChapters {
+    flex-grow: 1;
+    padding: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    cursor: pointer; }
+  #kwHeader #kwChapters,
+  #kwHeader #kwResults {
+    opacity: 0;
+    pointer-events: none;
+    flex-shrink: 1; }
+
+#kwMinPage,
+#kwMaxPage {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  position: fixed;
+  top: 0;
+  left: 0.75rem;
+  z-index: 50000;
+  background-color: #eeee77;
+  color: #222222;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 3rem;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  opacity: 0;
+  pointer-events: none; }
+
+#kwFinderOn:checked ~ #kwHeader #kwNav {
+  width: 1.2rem; }
+  #kwFinderOn:checked ~ #kwHeader #kwNav #kwRefresh, #kwFinderOn:checked ~ #kwHeader #kwNav #kwNextPage {
+    width: 0;
+    pointer-events: none; }
+#kwFinderOn:checked ~ #kwHeader #kwActionButtons #kwSelectBook {
+  width: 0;
+  padding-left: 0;
+  padding-right: 0;
+  pointer-events: none; }
+#kwFinderOn:checked ~ #kwHeader #kwActionButtons #kwFinderMenuButton {
+  opacity: 1;
+  pointer-events: auto; }
+#kwFinderOn:checked ~ #kwHeader #kwChapters, #kwFinderOn:checked ~ #kwHeader #kwResults {
+  opacity: 1;
+  pointer-events: auto; }
+#kwFinderOn:checked ~ #kwHeader #kwResults {
+  flex-shrink: 0; }
+
+#kwSanityCheckContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 90000;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: space-around; }
+  #kwSanityCheckContainer #sanityCheck {
+    width: 20rem;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 1rem;
+    background: #FFF;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+    #kwSanityCheckContainer #sanityCheck #scHeader {
+      color: #009933;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem; }
+    #kwSanityCheckContainer #sanityCheck #scDesc {
+      color: #555555;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem; }
+    #kwSanityCheckContainer #sanityCheck .scButton {
+      float: bottom;
+      height: 2.3rem;
+      width: 100%;
+      margin-top: 0.5rem;
+      color: white;
+      font-weight: bold;
+      border: 1px solid white;
+      box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      box-sizing: border-box; }
+      #kwSanityCheckContainer #sanityCheck .scButton:hover {
+        border: none; }
+    #kwSanityCheckContainer #sanityCheck #scContinue {
+      background-color: #009933; }
+    #kwSanityCheckContainer #sanityCheck #scStop {
+      background-color: #3366ff; }
+
+#kwFinderMenu {
+  height: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 80000;
+  overflow: hidden;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #333333;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start; }
+  #kwFinderMenu #kwKeywordsActions {
+    flex-shrink: 0;
+    margin-bottom: 1rem; }
+    #kwFinderMenu #kwKeywordsActions #kwKeywordsTitle,
+    #kwFinderMenu #kwKeywordsActions #kwAddKeyword,
+    #kwFinderMenu #kwKeywordsActions #kwAddKeywordButton {
+      vertical-align: middle; }
+    #kwFinderMenu #kwKeywordsActions #kwKeywordsTitle {
+      font-size: 1.8rem;
+      color: #eeee77;
+      margin-right: 0.5rem; }
+    #kwFinderMenu #kwKeywordsActions #kwAddKeyword {
+      padding: 0.5rem; }
+    #kwFinderMenu #kwKeywordsActions #kwAddKeywordButton {
+      padding: 0.5rem;
+      margin-left: 0.5rem; }
+  #kwFinderMenu #kwKeywords {
+    flex-grow: 1;
+    width: 100%; }
+    #kwFinderMenu #kwKeywords .kwKeyword {
+      display: inline-block;
+      padding: 0.5rem;
+      margin: 0.5rem;
+      margin-right: 1.5rem;
+      background-color: white;
+      color: black;
+      font-size: 1rem;
+      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16); }
+      #kwFinderMenu #kwKeywords .kwKeyword, #kwFinderMenu #kwKeywords .kwKeyword * {
+        transition: all 200ms; }
+      #kwFinderMenu #kwKeywords .kwKeyword i {
+        width: 0;
+        overflow: hidden;
+        color: #cc0000; }
+      #kwFinderMenu #kwKeywords .kwKeyword:hover {
+        padding-right: 0.2rem;
+        margin-right: 0.4rem;
+        cursor: pointer; }
+        #kwFinderMenu #kwKeywords .kwKeyword:hover i {
+          width: 1rem;
+          margin-left: 0.4rem; }
+
+#kwFinderMenuShadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 70000;
+  background-color: rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+  opacity: 0; }
+
+#kwFinderMenuOn:checked ~ #kwHeader #kwFinderMenuButton {
+  -webkit-transform: rotate(180deg); }
+#kwFinderMenuOn:checked ~ #kwFinderMenu {
+  height: 20rem;
+  padding: 1rem; }
+#kwFinderMenuOn:checked ~ #kwFinderMenuShadow {
+  pointer-events: auto;
+  opacity: 1; }

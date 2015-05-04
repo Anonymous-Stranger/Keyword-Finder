@@ -1,0 +1,27 @@
+{
+	"name": "Keyword Finder",
+	"description": "A program to find keywords in Project Gutenberg books. Because finding quotes is annoying. And difficult.",
+	"version": "3.0.126",
+	"manifest_version": 2,
+
+	"app": {
+		"background": {
+			"scripts": ["js/background.js"]
+		},
+		"scripts": ["external/jquery-2.1.3.min.js", "js/index.js"]
+	},
+
+	"permissions": ["webview", "http://www.gutenberg.org/*"],
+
+	"webview": {
+		"partitions": [
+			{"name": "book", "accessible_resources": ["http://gutenberg.org/*"]}
+		]
+	},
+
+	"icons": {
+		"16": "img/logo16x16.png",
+		"128": "img/logo128x128.png"
+	}
+
+}
