@@ -1,7 +1,7 @@
 {
 	"name": "Keyword Finder",
 	"description": "A program to find keywords in Project Gutenberg books. Because finding quotes is annoying. And difficult.",
-	"version": "3.0.126",
+	"version": "3.0.127",
 	"manifest_version": 2,
 
 	"app": {
