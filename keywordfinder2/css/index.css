@@ -17,8 +17,8 @@
   bottom: 100%;
   z-index: 10000;
   transition: all 1s;
-  background-color: #222222;
-  color: #eeee77;
+  background-color: #222;
+  color: #EE7;
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
   display: flex;
   flex-flow: column;
@@ -29,7 +29,7 @@
     display: block;
     z-index: 12000;
     flex-shrink: 0;
-    background-color: #222222;
+    background-color: #222;
     text-align: center;
     font-size: 2rem;
     margin-bottom: 1rem; }
@@ -38,7 +38,7 @@
       color: white; }
     #introduction #mainHeader #progName {
       margin: 1rem;
-      color: #eeee77; }
+      color: #EE7; }
   #introduction #introButtons {
     overflow: hidden; }
     #introduction #introButtons #yesTutorial,
@@ -50,7 +50,7 @@
       color: white;
       font-weight: bold;
       text-align: center;
-      border: 1px solid #222222;
+      border: 1px solid #222;
       box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
       #introduction #introButtons #yesTutorial:hover,
       #introduction #introButtons #noTutorial:hover {
@@ -59,7 +59,7 @@
     #introduction #introButtons #yesTutorial {
       background-color: #009933; }
     #introduction #introButtons #noTutorial {
-      background-color: #3366ff; }
+      background-color: #3366FF; }
   #introduction #tutorial {
     width: 652px;
     height: 0;
@@ -84,7 +84,7 @@
       z-index: 30000;
       box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
       #introduction #tutorial #tutorialHeader * {
-        color: #eeee77;
+        color: #EE7;
         vertical-align: middle;
         line-decoration: none;
         margin-left: 0.3rem;
@@ -96,7 +96,7 @@
         cursor: pointer; }
         #introduction #tutorial #tutorialHeader #prevSlide:hover *,
         #introduction #tutorial #tutorialHeader #nextSlide:hover * {
-          color: #eec522; }
+          color: #EEC522; }
       #introduction #tutorial #tutorialHeader #nextSlide {
         float: right; }
     #introduction #tutorial #tutorialSlide {
@@ -126,7 +126,7 @@
         font-weight: bold;
         text-align: center;
         line-height: 1.5rem;
-        border: 1px solid #222222;
+        border: 1px solid #222;
         box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
         #introduction #tutorial #tutorialSlide #tutorialFinished:hover {
           border: 1px solid transparent;
@@ -166,8 +166,8 @@
     padding: 0rem;
     padding-left: 2rem;
     padding-right: 2rem;
-    color: #eeee77;
-    background-color: #222222;
+    color: #EE7;
+    background-color: #222;
     box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
     display: flex;
     align-items: center;
@@ -178,3 +178,5 @@
       font-size: 2rem;
       margin-left: 2rem;
       margin-right: 1rem; }
+
+/*# sourceMappingURL=index.css.map */

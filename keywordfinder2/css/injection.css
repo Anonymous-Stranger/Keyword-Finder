@@ -6,13 +6,13 @@
 
 .kwHighlight {
   display: inline-block;
-  background-color: #eeee77;
-  color: #222222;
+  background-color: #EE7;
+  color: #222;
   text-indent: 0; }
   .kwHighlight[selected] {
-    background-color: #eec522; }
+    background-color: #EEC522; }
   .kwHighlight:hover {
-    background-color: #eec522;
+    background-color: #EEC522;
     cursor: pointer; }
 
 #kwHeader {
@@ -22,8 +22,8 @@
   right: 0;
   z-index: 99999;
   height: 0;
-  background-color: #222222;
-  color: #eeee77;
+  background-color: #222;
+  color: #EE7;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,7 +34,7 @@
     flex-shrink: 0;
     -webkit-user-select: none; }
   #kwHeader #kwTitle {
-    color: #eeee77;
+    color: #EE7;
     font-size: 2rem;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
@@ -42,12 +42,12 @@
   #kwHeader a, #kwHeader label {
     overflow: hidden;
     background-color: inherit;
-    color: #eeee77;
+    color: #EE7;
     cursor: pointer; }
     #kwHeader a:hover, #kwHeader label:hover {
       background-color: inherit; }
       #kwHeader a:hover *, #kwHeader label:hover * {
-        color: #eec522; }
+        color: #EEC522; }
   #kwHeader #kwNav {
     width: 6rem;
     margin-left: 1rem;
@@ -64,11 +64,12 @@
     #kwHeader #kwActionButtons #kwSelectBook {
       width: 8rem;
       height: 100%;
+      overflow: hidden;
       background-color: #009933;
       color: white;
       font-weight: bold;
       box-sizing: border-box;
-      border: 1px solid #222222;
+      border: 1px solid #222;
       box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       vertical-align: middle; }
       #kwHeader #kwActionButtons #kwSelectBook:hover {
@@ -102,8 +103,8 @@
   top: 0;
   left: 0.75rem;
   z-index: 50000;
-  background-color: #eeee77;
-  color: #222222;
+  background-color: #EE7;
+  color: #222;
   font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
@@ -156,7 +157,7 @@
       font-weight: bold;
       margin-bottom: 1rem; }
     #kwSanityCheckContainer #sanityCheck #scDesc {
-      color: #555555;
+      color: #555;
       font-size: 1.5rem;
       margin-bottom: 0.5rem; }
     #kwSanityCheckContainer #sanityCheck .scButton {
@@ -174,7 +175,7 @@
     #kwSanityCheckContainer #sanityCheck #scContinue {
       background-color: #009933; }
     #kwSanityCheckContainer #sanityCheck #scStop {
-      background-color: #3366ff; }
+      background-color: #3366FF; }
 
 #kwFinderMenu {
   height: 0;
@@ -186,7 +187,7 @@
   overflow: hidden;
   padding-left: 1rem;
   padding-right: 1rem;
-  background-color: #333333;
+  background-color: #333;
   font-size: 1.2rem;
   box-sizing: border-box;
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -204,7 +205,7 @@
       vertical-align: middle; }
     #kwFinderMenu #kwKeywordsActions #kwKeywordsTitle {
       font-size: 1.8rem;
-      color: #eeee77;
+      color: #EE7;
       margin-right: 0.5rem; }
     #kwFinderMenu #kwKeywordsActions #kwAddKeyword {
       padding: 0.5rem; }
@@ -228,7 +229,7 @@
       #kwFinderMenu #kwKeywords .kwKeyword i {
         width: 0;
         overflow: hidden;
-        color: #cc0000; }
+        color: #CC0000; }
       #kwFinderMenu #kwKeywords .kwKeyword:hover {
         padding-right: 0.2rem;
         margin-right: 0.4rem;
@@ -256,3 +257,5 @@
 #kwFinderMenuOn:checked ~ #kwFinderMenuShadow {
   pointer-events: auto;
   opacity: 1; }
+
+/*# sourceMappingURL=injection.css.map */
